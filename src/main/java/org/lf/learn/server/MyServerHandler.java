@@ -1,5 +1,6 @@
 package org.lf.learn.server;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyServerHandler extends SimpleChannelInboundHandler<String> {
 
-    private static Map<String, Channel> channelMap;
+    private static final Map<String, Channel> channelMap=new HashMap<>();
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
