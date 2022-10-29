@@ -14,7 +14,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <file>${LOG_PATH}/application.log</file>
             <!--日志文件输出的文件名-->
-            <FileNamePattern>./application.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${LOG_PATH}/application.%d{yyyy-MM-dd}.%i.log.gz</FileNamePattern>
             <!--日志文件保留天数-->
             <MaxHistory>10</MaxHistory>
         </rollingPolicy>

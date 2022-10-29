@@ -1,5 +1,6 @@
 package org.lf.learn.server;
 
+import ch.qos.logback.classic.util.ContextInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
@@ -10,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Server {
     public static void main(String[] args) throws InterruptedException {
+        System.setProperty(ContextInitializer.AUTOCONFIG_FILE, "/Users/liufu/code/idea/netty-learn/netty-learn/src/main/resources/logback.xml");
         log.info("main param is [args] ");
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup wokerGroup = new NioEventLoopGroup();

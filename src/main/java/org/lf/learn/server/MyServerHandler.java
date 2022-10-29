@@ -2,6 +2,7 @@ package org.lf.learn.server;
 
 import java.util.UUID;
 
+import ch.qos.logback.classic.util.ContextInitializer;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
