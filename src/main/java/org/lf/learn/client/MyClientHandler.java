@@ -13,7 +13,7 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         //服务端的远程地址
         log.info("client output: "+msg);
-        ctx.writeAndFlush("from client: "+ LocalDateTime.now());
+       // ctx.writeAndFlush("from client: "+ LocalDateTime.now());
     }
 
     /**
