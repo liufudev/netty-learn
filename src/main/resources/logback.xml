@@ -1,5 +1,6 @@
-<configuration>
+<configuration debug="true">
 
+    <property name="LOG_PATH" value="${user.home}/netty-learn/logs"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
@@ -9,11 +10,11 @@
     </appender>
 
     <!--文件日志， 按照每天生成日志文件 -->
-    <property name="LOG_HOME" value="/home" />
     <appender name="application" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <file>${LOG_PATH}/application.log</file>
             <!--日志文件输出的文件名-->
-            <FileNamePattern>application.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>./application.%d{yyyy-MM-dd}.log</FileNamePattern>
             <!--日志文件保留天数-->
             <MaxHistory>10</MaxHistory>
         </rollingPolicy>
@@ -29,5 +30,6 @@
 
     <root level="debug">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="application"/>
     </root>
 </configuration>
