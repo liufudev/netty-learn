@@ -14,6 +14,7 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
         //服务端的远程地址
         System.out.println(ctx.channel().remoteAddress());
         System.out.println("client output: "+msg);
+        log.info("client output: "+msg);
         ctx.writeAndFlush("from client: "+ LocalDateTime.now());
     }
 
