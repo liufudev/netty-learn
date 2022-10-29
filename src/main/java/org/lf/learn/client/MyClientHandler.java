@@ -12,8 +12,6 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         //服务端的远程地址
-        System.out.println(ctx.channel().remoteAddress());
-        System.out.println("client output: "+msg);
         log.info("client output: "+msg);
         ctx.writeAndFlush("from client: "+ LocalDateTime.now());
     }

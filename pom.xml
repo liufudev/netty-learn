@@ -62,7 +62,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        org.example.server.Server
+                                        org.lf.learn.server.Server
                                     </mainClass>
                                 </manifest>
                             </archive>
