@@ -15,13 +15,7 @@ public class EchoServer {
         final ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(group).channel(NioServerSocketChannel.class)
                 .localAddress(7999)
-                .childHandler(new ChannelInitializer<SocketChannel>() {
-                    @Override
-                    protected void initChannel(final SocketChannel ch) throws Exception {
-                        ch.pipeline().addLast(new StringDecoder(CharsetUtil.UTF_8))
-                                .addLast(new EchoServerHandler());
-                    }
-                });
+                .childHandler(new EchoServerInitializer());
         bootstrap.bind().sync();
     }
 }
