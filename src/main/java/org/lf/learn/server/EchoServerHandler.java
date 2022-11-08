@@ -2,27 +2,21 @@ package org.lf.learn.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.SimpleChannelInboundHandler;
+import lombok.extern.slf4j.Slf4j;
 
-public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+@Slf4j
+public class EchoServerHandler extends SimpleChannelInboundHandler<String> {
+
 
     @Override
-    public void channelRegistered(final ChannelHandlerContext ctx) throws Exception {
-        super.channelRegistered(ctx);
+    protected void channelRead0(final ChannelHandlerContext ctx, final String msg) throws Exception {
+        log.info("channelRead0 param is msg:{} ", msg);
     }
 
     @Override
     public void channelActive(final ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
-    }
-
-    @Override
-    public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
-        super.channelRead(ctx, msg);
-    }
-
-    @Override
-    public void channelReadComplete(final ChannelHandlerContext ctx) throws Exception {
-        super.channelReadComplete(ctx);
     }
 
     @Override

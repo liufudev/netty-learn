@@ -9,11 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyClientHandler extends SimpleChannelInboundHandler<String> {
 
+    private static ChannelHandlerContext context;
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         //服务端的远程地址
-        log.info("client output: "+msg);
-       // ctx.writeAndFlush("from client: "+ LocalDateTime.now());
+        log.info("client output: " + msg);
+        context = ctx;
     }
 
     /**
@@ -24,6 +26,7 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush("来自与客户端的问题!");
+        context = ctx;
     }
 
     @Override
@@ -31,4 +34,9 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String> {
         cause.printStackTrace();
         ctx.close();
     }
+
+    public void sendMessage(String message) {
+        context.writeAndFlush(message);
+    }
 }
+
