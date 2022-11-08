@@ -17,7 +17,7 @@ public class Client {
                     .handler(new MyClientInitializer());
 
             //ChannelFuture channelFuture = bootstrap.connect("47.113.192.207",8899).sync();
-            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1",8899).sync();
+            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1",7999).sync();
             channelFuture.channel().closeFuture().sync();
         }finally {
             eventLoopGroup.shutdownGracefully();
