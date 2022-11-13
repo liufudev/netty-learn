@@ -1,4 +1,4 @@
-package org.lf.learn.client;
+package org.lf.learn.netty.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package org.lf.learn.client;
+package org.lf.learn.netty.client;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

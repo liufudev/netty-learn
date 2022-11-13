@@ -1,4 +1,4 @@
-package org.lf.learn.server;
+package org.lf.learn.netty.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
